@@ -1,4 +1,4 @@
-package potatocult.curious_ender_chest;
+package potatocult.curious_ender_chest.capability;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
@@ -9,11 +9,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import top.theillusivec4.curios.api.capability.ICurio;
 
-public class CurioEnderChest implements ICurio {
+public class EnderChestCapability implements ICurio {
 
     private final ItemStack displayedItem;
 
-    public CurioEnderChest(ItemStack item) {
+    public EnderChestCapability(ItemStack item) {
         this.displayedItem = item;
     }
 

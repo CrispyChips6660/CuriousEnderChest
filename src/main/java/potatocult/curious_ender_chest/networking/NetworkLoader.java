@@ -4,9 +4,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 
-/***
- * @author Tbroski
- */
+
 public class NetworkLoader {
 
     public static SimpleChannel INSTANCE;
@@ -21,4 +19,5 @@ public class NetworkLoader {
 
         INSTANCE.registerMessage(nextID(), EnderChestPacket.class, EnderChestPacket::encode, EnderChestPacket::decode, EnderChestPacket::handle);
     }
+
 }

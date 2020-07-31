@@ -2,13 +2,10 @@ package potatocult.curious_ender_chest.networking;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
-import potatocult.curious_ender_chest.CuriousEnderChest;
+import potatocult.curious_ender_chest.client.EnderChestKeybind;
 
 import java.util.function.Supplier;
 
-/***
- * @author Tbroski
- */
 
 public class EnderChestPacket {
 
@@ -25,7 +22,7 @@ public class EnderChestPacket {
     }
 
     public static void handle(EnderChestPacket msg, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> CuriousEnderChest.OpenEnderChestGUI(ctx.get().getSender()));
+        ctx.get().enqueueWork(() -> EnderChestKeybind.OpenEnderChestGUI(ctx.get().getSender()));
         ctx.get().setPacketHandled(true);
     }
 }
