@@ -24,6 +24,7 @@ public class CuriousEnderChest {
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         MinecraftForge.EVENT_BUS.addGenericListener(ItemStack.class, this::attachCapabilities);
+        MinecraftForge.EVENT_BUS.register(new EnderChestKeybind());
 
         ClientRegistry.registerKeyBinding(EnderChestKeybind.OPEN_ENDERCHEST);
 
