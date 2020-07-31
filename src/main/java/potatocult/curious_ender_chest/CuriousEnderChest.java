@@ -12,14 +12,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.network.NetworkHooks;
+import potatocult.curious_ender_chest.networking.EnderChestPacket;
 import potatocult.curious_ender_chest.networking.NetworkLoader;
-import potatocult.curious_ender_chest.networking.packets.PacketOpenEnderChest;
 import top.theillusivec4.curios.api.CuriosAPI;
 
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_F;
 
 /***
- * @since 1.o
  * @author crispy_chips1234
  */
 @Mod("curious_ender_chest")
@@ -38,15 +37,13 @@ public class CuriousEnderChest {
 
     @SubscribeEvent
     public void HandleKey(InputEvent.KeyInputEvent event) {
-        //NetworkLoader.INSTANCE.sendToServer(new PacketOpenEnderChest());
+        NetworkLoader.INSTANCE.sendToServer(new EnderChestPacket());
     }
 
     public static void OpenEnderChestGUI(ServerPlayerEntity entity) {
         if (CuriousEnderChest.OPEN_ENDERCHEST.isKeyDown()) {
             if (CuriosAPI.getCurioEquipped(Items.ENDER_CHEST, entity).isPresent()) {
-                NetworkHooks.openGui(entity, new SimpleNamedContainerProvider((id, playerInventory, player) -> {
-                    return ChestContainer.createGeneric9X3(id, playerInventory, entity.getInventoryEnderChest());
-                }, new TranslationTextComponent("container.enderchest")));
+                NetworkHooks.openGui(entity, new SimpleNamedContainerProvider((id, playerInventory, player) -> ChestContainer.createGeneric9X3(id, playerInventory, entity.getInventoryEnderChest()), new TranslationTextComponent("container.enderchest")));
             }
         }
     }
