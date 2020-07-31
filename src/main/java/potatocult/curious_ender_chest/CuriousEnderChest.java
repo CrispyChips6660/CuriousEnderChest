@@ -41,8 +41,6 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_F;
 @Mod("curious_ender_chest")
 public class CuriousEnderChest {
 
-    public static void main(String[] args) {
-    }
 
     public static KeyBinding OPEN_ENDERCHEST = new KeyBinding("key.curious_ender_chest.open_enderchest.desc", GLFW_KEY_F, "key.categories.gameplay");
 
