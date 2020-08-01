@@ -7,10 +7,11 @@ import potatocult.curious_ender_chest.ModUtils;
 import java.util.function.Supplier;
 
 
-/*
-* Author: TBroski
-* https://www.curseforge.com/members/tbr0skl/projects
+/**
+ * @author TBroski
+ * https://www.curseforge.com/members/tbr0skl/projects
  */
+
 public class EnderChestPacket {
 
     public EnderChestPacket() {
