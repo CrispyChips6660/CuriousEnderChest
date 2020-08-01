@@ -4,7 +4,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 
-
+/*
+ * Author: TBroski
+ * https://www.curseforge.com/members/tbr0skl/projects
+ */
 public class NetworkLoader {
 
     public static SimpleChannel INSTANCE;

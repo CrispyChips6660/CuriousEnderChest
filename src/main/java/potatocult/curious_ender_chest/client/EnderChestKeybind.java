@@ -19,21 +19,16 @@ public class EnderChestKeybind {
 
     public static KeyBinding OPEN_ENDERCHEST = new KeyBinding("key.curious_ender_chest.open_enderchest.desc", GLFW.GLFW_KEY_X, "key.categories.gameplay");
 
-    public EnderChestKeybind() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
-
     public static void OpenEnderChestGUI(ServerPlayerEntity entity) {
-        if (OPEN_ENDERCHEST.isKeyDown()) {
             if (CuriosAPI.getCurioEquipped(Items.ENDER_CHEST, entity).isPresent()) {
                 NetworkHooks.openGui(entity, new SimpleNamedContainerProvider((id, playerInventory, player) -> ChestContainer.createGeneric9X3(id, playerInventory, entity.getInventoryEnderChest()), new TranslationTextComponent("container.enderchest")));
             }
-        }
     }
 
     @SubscribeEvent
     public void HandleKey(InputEvent.KeyInputEvent event) {
-        NetworkLoader.INSTANCE.sendToServer(new EnderChestPacket());
+        if (OPEN_ENDERCHEST.isKeyDown()) {
+            NetworkLoader.INSTANCE.sendToServer(new EnderChestPacket());
+        }
     }
-
 }

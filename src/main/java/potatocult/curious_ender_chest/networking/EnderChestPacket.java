@@ -7,6 +7,10 @@ import potatocult.curious_ender_chest.client.EnderChestKeybind;
 import java.util.function.Supplier;
 
 
+/*
+* Author: TBroski
+* https://www.curseforge.com/members/tbr0skl/projects
+ */
 public class EnderChestPacket {
 
     public EnderChestPacket() {
@@ -22,7 +26,8 @@ public class EnderChestPacket {
     }
 
     public static void handle(EnderChestPacket msg, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> EnderChestKeybind.OpenEnderChestGUI(ctx.get().getSender()));
+        ctx.get().enqueueWork(() ->
+                EnderChestKeybind.OpenEnderChestGUI(ctx.get().getSender()));
         ctx.get().setPacketHandled(true);
     }
 }
