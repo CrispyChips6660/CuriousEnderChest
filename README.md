@@ -1,2 +1,4 @@
 # CuriousEnderChest
-Minecraft mod that adds a "back" slot in your inventory via the Curios API that can hold enderchests that can be opened with Keybinds. Quite a mouthful, isn't it?
+Minecraft mod that simply adds an inventory slot to equip ender chests so you could open them with a simple keybind anywhere!
+
+Requires the [Curios](https://www.curseforge.com/minecraft/mc-mods/curios) API.
